@@ -3,28 +3,43 @@
 body {
 	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 	text-align: center;
+	background: url('../../images/dark_embroidery.png');
 	span {
 		font-family: 'Fascinate Inline', cursive;
+	}
+	iframe {
+		display: none;
+	}
+	#profile {
+		display: none;
+		background-image: url('../../images/profile.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+		top:0;
+		right:0;
+		height:100%;
+		width:50%;
 	}
 	article {
 		height: 100%;
 		width: 30%;
-		min-width:20%;
+		min-width: 20%;
 		overflow: auto;
+		z-index: 51;
 
 		position: absolute;
-		left:15%;
-		right:0;
-		top:0;
-		bottom:0;
+		left: 15%;
+		right: 0;
+		top: 0;
+		bottom: 0;
 	
 		
-		background: white;
-		opacity: 0.8;
-		border: 2px solid white;
+		background:rgba(255,255,255, 0.6);
 		p {
 			margin: 1%;
-			padding:1%;
+			padding: 1%;
 			font-size: larger;
 		}
 
@@ -33,139 +48,216 @@ body {
 		}
 
 		#about {
-			padding:5px;
+			padding: 5px;
 			padding-top: 10%;
 			text-align: left;
 			display: none;
 		}
 
 		#home{
-			padding-top:50%;
+			padding-top: 50%;
 		}
 
 		nav {
 			margin: 0 auto;
 			position: absolute;
-			bottom: 5px;
+			bottom: 10px;
 			width: 100%;
+			ul{
+				padding-left: 0;
+			}
 			li {
 				text-align: center;
 				display: inline-block;
-				// border:1px solid black;
 				list-style-type: none;
-				// overflow: hidden;	
 				width:32%;
+				font-size: larger;
 			}
+			
 			li:hover{
-				// @keyframes listPop {
-				//   0%  {
-				//     bottom: 3px;
-				//   }
-				//   100% {  
-				//     bottom: 27px;
-				//   }
-				// }
-				// animation: listPop 2s 0 1 alternate; 
-				transition: bottom .5s linear;
 				color:white;
 				background-color: black;
 				opacity: 0.8;
-			}
-			.hovered{
-				bottom: 27px;
-			}
-		}
-
-		@include media("<=tablet"){
-			// temporary
-			position: absolute;
-			left:0;
-			right:0;
-			top:0;
-			bottom:0;
-
-			height: 30vh;
-			width: 100%;
-			nav{
-				li{
-					display: inline;
-				}
+				cursor: pointer; cursor: hand;
 			}
 		}
 	}
+	.galleried {
+		//for nav
+		position: fixed;
+		top: 0;
+		bottom:0;
+		left: 0;
+		right: 0;
+		height:10%;
+		width:100%;
+	}
 	
-	#myCarousel {	
-		height: 100vh;
-		max-width:100%;
-		max-height:100vh;
-		border: 20px solid white;
-		
-		.carousel-indicators {
-			display:none;
+	#background{	
+		#myCarousel {	
+			height: 100vh;
+			max-width:100%;
+			max-height:100vh;
+			border: 20px solid white;
+			.veil {
+				position: fixed;
+				top:0;
+				bottom:0;
+				right:0;
+				left:0;
+				background:rgba(255,255,255, 0.6);
+				display: none;
+			}
+			.carousel-indicators {
+				display:none;
+			}
+			.carousel-inner, .item {
+				height: 100%;
+				margin:auto;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 		}
-		div {
-			height: 100%;
-			margin:auto;
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center;
+		.grid {
+			display: none;
+			height: 100vh;
+			max-width:100%;
+			max-height:100%;
+
+			.grid-sizer,
+			.grid-item {
+			  width: 33.3333%;
+			  height:100vh;
+			}
+
+			.grid-item { 
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 		}
-		#img1 {
+		//Added as background images so that
+		//users can't right click and download
+		.img1 {
 			background-image: url('../../images/1.jpg');
 		}
-		#img2 {
-			background-image: url('../../images/DA1.png'); 
+		.img2 {
+			background-image: url('../../images/2.jpg');
 		}
-		#img3 {
-			background-image: url('../../images/DSC_0034_copy.JPG'); 
+		.img3 {
+			background-image: url('../../images/3.jpg');
 		}
-		#img4 {
-			background-image: url('../../images/DSC_0044.jpg'); 
+		.img4 {
+			background-image: url('../../images/4.jpg');
 		}
-		#img5 {
-			background-image: url('../../images/DSC_0044.jpg'); 
+		.img5 {
+			background-image: url('../../images/5.jpg');
 		}
-		#img6 {
-			background-image: url('../../images/DSC_0045.jpg'); 
+		.img6 {
+			background-image: url('../../images/6.jpg');
 		}
-		#img7 {
-			background-image: url('../../images/DSC_0047.jpg'); 
+		.img7 {
+			background-image: url('../../images/7.jpg');
 		}
-		#img8 {
-			background-image: url('../../images/DSC_0082.JPG'); 
+		.img8 {
+			background-image: url('../../images/8.jpg');
 		}
-		#img9 {
-			background-image: url('../../images/DSC_0325.JPG'); 
+		.img9 {
+			background-image: url('../../images/9.jpg');
 		}
-		#img10 {
-			background-image: url('../../images/DSC_0401_copy.JPG'); 
+		.img10 {
+			background-image: url('../../images/10.jpg');
 		}
-		#img11 {
-			background-image: url('../../images/DSC_0434_copy.JPG'); 
+		.img11 {
+			background-image: url('../../images/11.jpg');
 		}
-		#img12 {
-			background-image: url('../../images/DSC_0453_copy.JPG'); 
+		.img12 {
+			background-image: url('../../images/12.jpg');
 		}
-		#img13 {
-			background-image: url('../../images/gala_22.jpg'); 
+		.img13 {
+			background-image: url('../../images/13.jpg');
 		}
-		#img14 {
-			background-image: url('../../images/gala_23.jpg'); 
+		.img14 {
+			background-image: url('../../images/14.jpg');
 		}
-		#img15 {
-			background-image: url('../../images/gala_31.jpg'); 
+		.img15 {
+			background-image: url('../../images/15.jpg');
 		}
-		#img16 {
-			background-image: url('../../images/gala_53.jpg'); 
+		.img16 {
+			background-image: url('../../images/16.jpg');
 		}
-		#img17 {
-			background-image: url('../../images/PAL_12.jpg'); 
+		.img17 {
+			background-image: url('../../images/17.jpg');
 		}
-		#img18 {
-			background-image: url('../../images/PAL_13.jpg'); 
+		.img18 {
+			background-image: url('../../images/18.jpg');
 		}
-		#img19 {
-			background-image: url('../../images/PAL_14.jpg'); 
+		.img19 {
+			background-image: url('../../images/19.jpg');
+		}
+		.img20 {
+			background-image: url('../../images/20.jpg');
+		}
+		.img21 {
+			background-image: url('../../images/21.jpg');
+		}
+		.img22 {
+			background-image: url('../../images/22.jpg');
+		}
+		.img23 {
+			background-image: url('../../images/23.jpg');
+		}
+		.img24 {
+			background-image: url('../../images/24.jpg');
+		}
+		.img25 {
+			background-image: url('../../images/25.jpg');
+		}
+		.img26 {
+			background-image: url('../../images/26.jpg');
+		}
+		.img27 {
+			background-image: url('../../images/27.jpg');
+		}
+		.img28 {
+			background-image: url('../../images/28.jpg');
+		}
+		.img29 {
+			background-image: url('../../images/29.jpg');
+		}
+		.img30 {
+			background-image: url('../../images/30.jpg');
+		}
+		.img31 {
+			background-image: url('../../images/31.jpg');
+		}
+		.img32 {
+			background-image: url('../../images/32.jpg');
+		}
+		.img33 {
+			background-image: url('../../images/33.jpg');
+		}
+		.img34 {
+			background-image: url('../../images/34.jpg');
+		}
+		.img35 {
+			background-image: url('../../images/35.jpg');
+		}
+		.img36 {
+			background-image: url('../../images/36.jpg');
+		}
+		.img37 {
+			background-image: url('../../images/37.jpg');
+		}
+		.img38 {
+			background-image: url('../../images/38.jpg');
+		}
+		.img39 {
+			background-image: url('../../images/39.jpg');
+		}
+		.img40 {
+			background-image: url('../../images/40.jpg');
 		}
 	}
 }
